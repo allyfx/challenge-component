@@ -6,3 +6,7 @@ This is the challenge proposed during the freelance frontend meeting to test my 
 
 ## 🎞Preview
 <img src=".github/component.png"></img>
+
+## 🚧Built With
+- ReactJS
+- Typescript
