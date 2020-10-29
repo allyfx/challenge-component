@@ -17,23 +17,24 @@ function SelectOrWrite({ labelText, options, handleSelectedOption }: SelectOrWri
     const [showOptions, setShowOptions] = useState(false);
 
     return(
-        <div className="select-write-container">
-            <label htmlFor={labelText}>{labelText}</label>
-            <div className="select-write-input">
-                <input
-                    className="select-write-text-input"
-                    id={labelText}
-                    type="text"
-                    placeholder="escreva ou selecione"
-                />
+        <div className="container-select">
+            <div className="select-write-container">
+                <label htmlFor={labelText}>{labelText}</label>
+                <div className="select-write-input">
+                    <input
+                        className="select-write-text-input"
+                        id={labelText}
+                        type="text"
+                        placeholder="escreva ou selecione"
+                    />
 
-                <HiSelector 
-                    className="select-icon-button"
-                    size={26}
-                    onClick={() => { setShowOptions(!showOptions) }}
-                />
+                    <HiSelector 
+                        className="select-icon-button"
+                        size={24}
+                        onClick={() => { setShowOptions(!showOptions) }}
+                    />
+                </div>
             </div>
-
             <div
                 className="options-display"
                 hidden={!showOptions}
@@ -41,6 +42,7 @@ function SelectOrWrite({ labelText, options, handleSelectedOption }: SelectOrWri
                 {options.map(option => {
                     return(
                         <option
+                            key={option}
                             className="option"
                             onClick={() => {
                                 handleSelectedOption(option);
@@ -81,21 +83,23 @@ function Form() {
                         <DateInputContainer labelText="Até" />
                     </div>
 
-                    <SelectOrWrite
-                        labelText="Estufa"
-                        options={[ "Estufa 1", "Estufa 2" ]}
-                        handleSelectedOption={handleSelectedOption}
-                    />
+                    <div className="select-write-inputs" >
+                        <SelectOrWrite
+                            labelText="Estufa"
+                            options={[ "Estufa 1", "Estufa 2" ]}
+                            handleSelectedOption={handleSelectedOption}
+                        />
 
-                    <SelectOrWrite
-                        labelText="Hostaliça"
-                        options={[ "Hostaliça 1", "Hostaliça 2" ]}
-                        handleSelectedOption={handleSelectedOption}
-                    />
+                        <SelectOrWrite
+                            labelText="Hostaliça"
+                            options={[ "Hostaliça 1", "Hostaliça 2" ]}
+                            handleSelectedOption={handleSelectedOption}
+                        />
+                    </div>
 
                     <button type="submit" className="submit-form-button">
-                        realizar pesquisa
-                        <HiSearch size={20} />
+                        <span>realizar pesquisa</span>
+                        <HiSearch size={20} color="#000" />
                     </button>
                 </form>
             </div>

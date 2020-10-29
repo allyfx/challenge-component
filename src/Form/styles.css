@@ -1,0 +1,137 @@
+.container {
+   height: 100vh;
+
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.container .form-container {
+   background-color: #fbe8d3;
+   border-radius: 40px 0 0 40px;
+   padding: 40px 70px;
+   width: 50vw;
+}
+
+.container  h1 {
+   margin-left: 50px;
+   margin-bottom: 20px;
+
+   font-family: Roboto, sans-serif;
+   font-weight: 400;
+   color: #3e4149;
+}
+
+.container .form-container .select-date-container,
+.container .form-container .select-write-inputs {
+   width: 500px;
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: flex-start;
+}
+
+.container .form-container .select-write-container,
+.container .form-container .select-write-input {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-container .date-input-container label,
+.form-container .select-write-container label {
+   cursor: pointer;
+   margin-right: 10px;
+
+   font-family: Roboto, sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   color: #0d7377;
+}
+
+.form-container .date-input-container,
+.form-container .select-write-container {
+   padding-left: 10px;
+   border: 1px solid #FFF;
+   border-radius: 6px;
+}
+
+.form-container .select-write-input .select-write-text-input {
+   background: none;
+   border: none;
+   outline: none;
+}
+
+.form-container .date-input-container .date-input {
+   padding-left: 10px;
+   border-radius: 6px;
+
+   height: 100%;
+   border: none;
+   outline: none;
+}
+
+.form-container .date-input-container {
+   height: 26px;
+   margin-bottom: 20px;
+
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.form-container .select-write-input {
+   padding-left: 6px;
+   background-color: #FFF;
+   border-radius: 6px;
+}
+
+.form-container .container-select + .container-select,
+.form-container .date-input-container + .date-input-container {
+   margin-left: 16px;
+}
+
+.form-container .options-display {
+   float: right;
+
+   background: #FFF;
+   padding: 20px;
+   border-radius: 0 0 10px 10px;
+}
+
+.form-container .options-display .option {
+   font-family: Roboto, sans-serif;
+   font-weight: 500;
+   color: #0d7377;
+}
+
+.form-container .options-display .option ~ .option {
+   margin-top: 4px;
+   padding-top: 4px;
+   border-top: 1px solid #eeeeee;
+}
+
+.form-container .submit-form-button {
+   margin-top: 10px;
+   border: none;
+   background-color: #17b978;
+   border-radius: 16px;
+   padding: 6px;
+
+   color: #eeeeee;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-container .submit-form-button:hover {
+   cursor: pointer;
+}
+
+.form-container .submit-form-button span {
+   margin-right: 6px;
+   font-family: Roboto, sans-serif;
+   font-weight: 500;
+}
