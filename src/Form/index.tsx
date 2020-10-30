@@ -15,6 +15,7 @@ interface SelectOrWriteProps {
 
 function SelectOrWrite({ labelText, options, handleSelectedOption }: SelectOrWriteProps) {
     const [showOptions, setShowOptions] = useState(false);
+    const [inputValue, setInputValue] = useState('');
 
     return(
         <div className="container-select">
@@ -25,6 +26,8 @@ function SelectOrWrite({ labelText, options, handleSelectedOption }: SelectOrWri
                         className="select-write-text-input"
                         id={labelText}
                         type="text"
+                        value={inputValue}
+                        onChange={(event) => { setInputValue(event.target.value) }}
                         placeholder="escreva ou selecione"
                     />
 
@@ -45,6 +48,7 @@ function SelectOrWrite({ labelText, options, handleSelectedOption }: SelectOrWri
                             key={option}
                             className="option"
                             onClick={() => {
+                                setInputValue(option)
                                 handleSelectedOption(option);
                                 setShowOptions(!showOptions);
                             }}
@@ -91,8 +95,8 @@ function Form() {
                         />
 
                         <SelectOrWrite
-                            labelText="Hostaliça"
-                            options={[ "Hostaliça 1", "Hostaliça 2" ]}
+                            labelText="Hortaliça"
+                            options={[ "Hortaliça 1", "Hortaliça 2" ]}
                             handleSelectedOption={handleSelectedOption}
                         />
                     </div>
